@@ -1,0 +1,26 @@
+ERROR: 2023/08/09 00:16:08 log.go:63: Failed to log register action: database is locked
+ERROR: 2023/08/09 00:16:08 authen.go:104: An error occurred: database is locked
+ERROR: 2023/08/09 00:16:13 log.go:63: Failed to log register action: database is locked
+ERROR: 2023/08/09 00:22:12 log.go:63: Failed to log register action: database is locked
+ERROR: 2023/08/09 00:30:07 log.go:63: Failed to log register action: database is locked
+ERROR: 2023/08/09 00:30:12 log.go:63: Failed to log register action: database is locked
+ERROR: 2023/08/09 00:30:23 log.go:63: Failed to log register action: database is locked
+ERROR: 2023/08/09 00:30:23 authen.go:104: An error occurred: database is locked
+ERROR: 2023/08/09 00:30:28 log.go:63: Failed to log register action: database is locked
+ERROR: 2023/08/09 00:30:28 authen.go:104: An error occurred: database is locked
+ERROR: 2023/08/09 00:30:56 log.go:63: Failed to log register action: database is locked
+ERROR: 2023/08/09 00:30:56 authen.go:104: An error occurred: database is locked
+ERROR: 2023/08/09 00:38:54 authen.go:104: An error occurred: database is locked
+ERROR: 2023/08/09 00:38:56 authen.go:104: An error occurred: database is locked
+ERROR: 2023/08/09 00:39:11 authen.go:104: An error occurred: database is locked
+ERROR: 2023/08/09 00:40:36 authen.go:104: An error occurred: database is locked
+ERROR: 2023/08/09 00:40:54 authen.go:104: An error occurred: database is locked
+ERROR: 2023/08/09 00:55:07 authen.go:104: An error occurred: UNIQUE constraint failed: users.username
+ERROR: 2023/08/09 00:57:42 authen.go:104: An error occurred: UNIQUE constraint failed: users.username
+ERROR: 2023/08/09 00:57:53 authen.go:48: An error occurred: record not found
+ERROR: 2023/08/09 01:06:22 authen.go:104: An error occurred: UNIQUE constraint failed: users.username
+ERROR: 2023/08/09 01:06:23 authen.go:104: An error occurred: UNIQUE constraint failed: users.username
+ERROR: 2023/08/09 01:41:55 authen.go:104: An error occurred: UNIQUE constraint failed: users.username
+ERROR: 2023/08/09 01:41:59 authen.go:104: An error occurred: UNIQUE constraint failed: users.username
+ERROR: 2023/08/09 01:45:14 authen.go:55: An error occurred: crypto/bcrypt: hashedPassword is not the hash of the given password
+ERROR: 2023/08/09 01:45:20 authen.go:48: An error occurred: record not found

@@ -1,0 +1,150 @@
+### GET PRODUCT 
+
+GET http://localhost:8082/api/v2/product?token=1234 HTTP/1.1
+
+Content-Type: application/json
+
+{
+    "username" : "CP9S",
+    "pssword" : 1234
+}
+
+### GET PRODUCT WITH KEYWORD
+
+GET http://localhost:8082/api/v2/product?keyword=PHP HTTP/1.1
+
+Content-Type: application/json
+
+{
+    "username" : "CP9S",
+    "pssword" : 1234
+}
+
+
+### GET PRODUCT BY ID
+
+GET http://localhost:8082/api/v2/product/5 HTTP/1.1
+
+Content-Type: application/json
+
+{
+    "username" : "CP9S",
+    "pssword" : 1234
+}
+
+### GET PRODUCT WITH TOKEN
+
+GET http://localhost:8082/api/v2/product HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTIwNzU4OTYsImlkIjoyLCJsZXZlbCI6Im5vcm1hbCIsInVzZXJuYW1lIjoiTkVXMTAifQ.-xAGWHLOicYak4qimgD9rs0zbQD7L4m-1YzkCDMXB68
+
+### CREATE PRODUCT with only json
+
+POST http://localhost:8082/api/v2/product HTTP/1.1
+
+Content-Type: application/json
+
+{
+    "username" : "CP9S",
+    "pssword" : 1234
+}
+
+
+### CREATE PRODUCT with mulitipath for send more text without image 
+
+POST http://localhost:8082/api/v2/product HTTP/1.1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name";
+
+Angular 
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="stock";
+
+300
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="price";
+
+180
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+## อย่าลืมปิดท้ายด้วย -- ตรง ------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+### CREATE PRODUCT with mulitipath for send more text and image 
+POST http://localhost:8082/api/v2/product HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTEwODE2NjAsImlkIjoxLCJsZXZlbCI6Im5vcm1hbCIsInVzZXJuYW1lIjoiQ1A5UzAwMSJ9.LO0DV0KR4C5zxJ0njXaT_Q7LpK8GIMtdcS5j5Q8X2x0
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name";
+
+Angular05
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="stock";
+
+300
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="price";
+
+180
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="product_01.jpg"
+Content-Type: image/png
+
+< ./uploaded/images/product_01.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+
+### UPDATE  PRODUCT with mulitipath for send more text and image 
+PUT http://localhost:8082/api/v2/product HTTP/1.1
+Authorization: Bearer eyJßhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTEwODE2NjAsImlkIjoxLCJsZXZlbCI6Im5vcm1hbCIsInVzZXJuYW1lIjoiQ1A5UzAwMSJ9.LO0DV0KR4C5zxJ0njXaT_Q7LpK8GIMtdcS5j5Q8X2x0
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="id";
+
+7
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name";
+
+React
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="stock";
+
+200
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="price";
+
+100
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="product_01.jpg"
+Content-Type: image/png
+
+< ./uploaded/images/csharp.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+### UPDATE  PRODUCT with mulitipath for send more text 
+PUT http://localhost:8082/api/v2/product HTTP/1.1
+Authorization: Bearer eyJßhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTEwODE2NjAsImlkIjoxLCJsZXZlbCI6Im5vcm1hbCIsInVzZXJuYW1lIjoiQ1A5UzAwMSJ9.LO0DV0KR4C5zxJ0njXaT_Q7LpK8GIMtdcS5j5Q8X2x0
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="id";
+
+10
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name";
+
+GOGO
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="stock";
+
+100
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="price";
+
+350
+------WebKitFormBoundary7MA4YWxkTrZu0gW--

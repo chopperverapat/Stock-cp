@@ -1,0 +1,8 @@
+### LOG
+
+GET http://localhost:8082/api/v2/log HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTE1MjEwMzUsImlkIjoyMSwibGV2ZWwiOiJub3JtYWwiLCJ1c2VybmFtZSI6Ik5FVzA5In0.VS7U1zz-UeINeJF0Cq_AAZ88mLrmH77Ex8B6deT4GPo
+
+
+
+
