@@ -31,11 +31,9 @@ This project is developed using Go and Gin framework to create a stock product m
    ```bash
        git clone https://github.com/chopperverapat/stock_product.git
 
-
 2. Navigate to the project directory:
    ```bash
       cd stock_product
-
 
 3. Install dependencies:
   ```go
@@ -47,7 +45,7 @@ This project is developed using Go and Gin framework to create a stock product m
 
 5. Run the application:
    ```go
-       go run server.go
+         go run server.go
    ```
 
 
