@@ -29,15 +29,15 @@ This project is developed using Go and Gin framework to create a stock product m
 1. Clone the repository:
 
    ```bash
-       git clone https://github.com/chopperverapat/stock_product.git
+   git clone https://github.com/chopperverapat/stock_product.git
 
 2. Navigate to the project directory:
    ```bash
-      cd stock_product
+   cd stock_product
 
 3. Install dependencies:
   ```go
-         go mod download
+  go mod download
   ```
 
 4. Set up your database configuration in db/config.go.
@@ -45,7 +45,7 @@ This project is developed using Go and Gin framework to create a stock product m
 
 5. Run the application:
    ```go
-         go run server.go
+   go run server.go
    ```
 
 
