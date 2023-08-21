@@ -37,9 +37,9 @@ This project is developed using Go and Gin framework to create a stock product m
    ```
 
 3. Install dependencies:
-  ```go
-go mod download
-  ```
+    ```go
+      go mod download
+    ```
 
 4. Set up your database configuration in db/config.go.
 5. Run the application:
