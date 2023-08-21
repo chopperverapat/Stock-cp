@@ -1,70 +1,72 @@
-# Middleware และ Interceptor
+# Stock Product Management System
 
-Middleware เป็นตัวกลางที่ใช้ในการประมวลผล HTTP requests ก่อนที่จะถึง handler หลักของเรา (controller) หรือหลังจากที่ handler ทำงานเสร็จแล้วก่อนที่จะส่ง response กลับไปให้ client ในการใช้งานจริง Middleware สามารถใช้งานเพื่อปรับแต่งเช่น เช็คการรับส่งข้อมูล ตรวจสอบการรับส่ง Token, ทำการประมวลผลก่อนเข้าสู่การจัดการหลัก หรือทำการล็อกอิน ฯลฯ
+Welcome to the Stock Product Management System project repository! This project aims to provide a web-based system for managing stock products, transactions, and authentication using the Go programming language and the Gin web framework.
 
-Interceptor นั้นเป็นส่วนหนึ่งของ Middleware ที่ทำหน้าที่ตรวจสอบหรือประมวลผลบางอย่างก่อนที่ HTTP request จะถึง handler หลักของเรา โดย Interceptor จะสามารถควบคุมการทำงานของเราก่อนถึงจะถึงมือในการจัดการของ Controller หรือ Handler หลัก
+## Table of Contents
 
-## ตัวอย่าง Middleware แบบง่าย - ตรวจสอบ Token และสิทธิ์การเข้าถึง
+- [Stock Product Management System](#stock-product-management-system)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [API Endpoints](#api-endpoints)
+  - [Contributing](#contributing)
 
+## Introduction
+
+This project is developed using Go and Gin framework to create a stock product management system. It includes features like authentication, product management, and transaction tracking.
+
+## Features
+
+- User authentication (login and registration)
+- Product management (create, read, update, delete)
+- Transaction tracking (create, read)
+- API endpoints for interaction with the system
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/chopperverapat/stock_product.git
+
+
+2. Navigate to the project directory:
+   ```bash
+   git clone https://github.com/chopperverapat/stock_product.git
+
+3. Install dependencies:
 ```go
-func AuthMiddleware() gin.HandlerFunc {
-    return func(c *gin.Context) {
-        // ตรวจสอบ Token หรือการรับส่งข้อมูลตามที่ต้องการ
-        
-        token := c.GetHeader("Authorization")
-        if token == "" {
-            c.JSON(http.StatusUnauthorized, gin.H{"error": "Unauthorized"})
-            c.Abort() // หยุดการทำงานของ Middleware นี้
-            return
-        }
-        
-        // ตรวจสอบสิทธิ์การเข้าถึงตามที่ต้องการ
-        // ตัวอย่างเช่น ตรวจสอบว่าผู้ใช้มีสิทธิ์เข้าถึงหน้าที่กำลังจะเข้าถึงหรือไม่
-        // ถ้าไม่มีสิทธิ์ให้ทำการหยุดการทำงานของ Middleware และส่งข้อความ Unauthorized
-        // เป็นต้น
-        // ...
-        
-        // ถ้าผ่านการตรวจสอบทั้งหมด ให้ผ่านการทำงานไปยัง Handler หลัก
-        c.Next()
-    }
-}
-
-func SetupAuthenApi(router *gin.Engine) {
-    authenAPI := router.Group("/api/v2")
-    authenAPI.Use(AuthMiddleware()) // ใช้ Middleware ในกลุ่มนี้
-    {
-        authenAPI.POST("/login", login)
-        authenAPI.POST("/register", register)
-    }
-}
-
+     go mod download
 ```
-## ตัวอย่างที่ 2
 
-```go
+4. Set up your database configuration in db/config.go.
 
-// create interepter
-func AuthenMiddleware(c *gin.Contest){
-    // query from clien sent request
-    // http://brabra/api/v2/?token=1234 => string query
-    token := c.Query("token")
-    if token = "1234" {
-        //ให้ทำต่อ ไป function hendle ได้
-        c.Next()
-    }else {
-        c.JSON(http.StatusUnthorizeds,gin.H{"error": "invalid token"})
-        // ให้หยุดการทำงาน
-        c.Abort()
-    }
-}
 
-func SetupProductApi(router *gin.Engine) {
-	productAPI := router.Group("/api/v2")
-	{
-        // Interceptor มาขั้นก่อนจะถึง function handle ซึ่ง Interceptor เป็นส่วนึงของ middleware
-		productAPI.GET("/product", AuthenMiddleware,getproduct)
-		productAPI.POST("/product", createproduct)
-	}
-}
-
+5. Run the application:
+ ```go
+     go run server.go
 ```
+
+
+## Usage
+
+- Access the web application by visiting [http://localhost:8080](http://localhost:8080) in your web browser.
+
+## API Endpoints
+
+The API endpoints are designed to interact with the system programmatically. Here are some of the available endpoints:
+
+- `/api/v2/login`: Authenticate user and generate a JWT token.
+- `/api/v2/register`: Register a new user.
+- `/api/v2/product`: Get a list of products.
+- `/api/v2/product/:id`: Get product details by ID.
+- `/api/v2/transaction`: Get a list of transactions.
+- `/api/v2/transaction`: Create a new transaction (requires JWT token).
+Refer to the source code for a complete list of API endpoints and their functionality.
+
+## Contributing
+
+Contributions to this project are welcome! If you find any issues or would like to add new features, feel free to open an issue or submit a pull request.
+
