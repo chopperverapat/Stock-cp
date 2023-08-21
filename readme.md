@@ -1,6 +1,6 @@
 # Stock Product Management System
 
-Welcome to the Stock Product Management System project repository! This project aims to provide a web-based system for managing stock products, transactions, and authentication using the Go programming language and the Gin web framework.
+Welcome to the Stock Product Management System project repository! This project aims to provide a web-based system for managing stock products, transactions, and authentication using the Go programming language : the Gin web framework and database : gorm and sqlite .
 
 ## Table of Contents
 
